@@ -47,7 +47,6 @@ class CategoryController extends Controller
             ]);
 
             $validated['slug'] = Str::slug($validated['name']);
-            $validated['icon'] = '📁'; // Default icon
 
             $category = Category::create($validated);
 

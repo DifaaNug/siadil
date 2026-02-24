@@ -19,9 +19,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Database kosong untuk presentasi
-        // User akan menambahkan data secara manual saat demo
 
-        $this->command->info('✅ Database siap - kosong untuk presentasi!');
     }
 }
