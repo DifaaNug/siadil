@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIADIL - Panduan Presentasi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: flex;
+            min-height: 90vh;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: linear-gradient(180deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 30px 20px;
+            overflow-y: auto;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .nav-item {
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: rgba(255,255,255,0.1);
+            border-left-color: #fbbf24;
+            padding-left: 20px;
+        }
+
+        .nav-item.active {
+            background: rgba(255,255,255,0.15);
+            border-left-color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .content {
+            flex: 1;
+            padding: 40px 50px;
+            overflow-y: auto;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-size: 32px;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            color: #1e40af;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        h3 {
+            color: #3b82f6;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #92400e;
+        }
+
+        code {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .file-path {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 13px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .badge {
+            background: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 5px 5px 5px 0;
+        }
+
+        .badge.red { background: #ef4444; }
+        .badge.yellow { background: #f59e0b; }
+        .badge.blue { background: #3b82f6; }
+        .badge.purple { background: #8b5cf6; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: #1e40af;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:hover {
+            background: #f9fafb;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 10px;
+            margin: 8px 0;
+            background: #f0fdf4;
+            border-left: 3px solid #10b981;
+            border-radius: 6px;
+        }
+
+        .checklist li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .success {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .flow {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .flow-step {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .flow-step:before {
+            content: "→";
+            margin-right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        @media print {
+            .sidebar { display: none; }
+            .container { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">SIADIL</div>
+            <div class="subtitle">Panduan Presentasi</div>
+
+            <div class="nav-item active" onclick="showSection('mvc')">MVC Pattern</div>
+            <div class="nav-item" onclick="showSection('oop')">OOP & Relationships</div>
+            <div class="nav-item" onclick="showSection('algoritma')">Algoritma Penting</div>
+            <div class="nav-item" onclick="showSection('upload')">File Upload</div>
+            <div class="nav-item" onclick="showSection('security')">Security</div>
+            <div class="nav-item" onclick="showSection('database')">Database</div>
+            <div class="nav-item" onclick="showSection('kuk')">KUK Mapping</div>
+            <div class="nav-item" onclick="showSection('demo')">Demo Flow</div>
+            <div class="nav-item" onclick="showSection('qa')">Q&A Penting</div>
+        </div>
+
+        <div class="content">
+            <!-- MVC PATTERN -->
+            <div id="mvc" class="section active">
+                <h1>MVC Pattern</h1>
+
+                <div class="card">
+                    <h3>Konsep MVC</h3>
+                    <p><strong>Model-View-Controller:</strong> Pemisahan logic aplikasi menjadi 3 layer</p>
+                </div>
+
+                <h2>1. Model (Data Layer)</h2>
+                <div class="file-path">📁 app/Models/Document.php</div>
+                <ul>
+                    <li>Handle data dan business logic</li>
+                    <li>Berisi relationships, scopes, methods</li>
+                    <li>Komunikasi dengan database via Eloquent ORM</li>
+                </ul>
+                <pre>class Document extends Model {
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+}</pre>
+
+                <h2>2. View (Presentation Layer)</h2>
+                <div class="file-path">📁 resources/views/documents/index.blade.php</div>
+                <ul>
+                    <li>Pure HTML + Blade template</li>
+                    <li>Tidak ada business logic</li>
+                    <li>Hanya tampilkan data yang dikirim Controller</li>
+                </ul>
+
+                <h2>3. Controller (Logic Layer)</h2>
+                <div class="file-path">📁 app/Http/Controllers/DocumentController.php</div>
+                <ul>
+                    <li>Handle request dari user</li>
+                    <li>Ambil data dari Model</li>
+                    <li>Kirim data ke View</li>
+                    <li>Validasi input</li>
+                    <li>Business logic</li>
+                </ul>
+
+                <div class="flow">
+                    <h3 style="margin-bottom: 15px;">Flow Lengkap MVC</h3>
+                    <div class="flow-step">User klik "Tambah Dokumen"</div>
+                    <div class="flow-step">Route: /documents/create</div>
+                    <div class="flow-step">DocumentController@create()</div>
+                    <div class="flow-step">Ambil data kategori dari Model</div>
+                    <div class="flow-step">Kirim ke View create.blade.php</div>
+                    <div class="flow-step">User submit form</div>
+                    <div class="flow-step">Route: POST /documents</div>
+                    <div class="flow-step">DocumentController@store()</div>
+                    <div class="flow-step">Validasi → Simpan via Model</div>
+                    <div class="flow-step">Redirect + Flash Message</div>
+                </div>
+
+                <div class="warning">
+                    <strong>⚠️ Penting untuk Presenter:</strong><br>
+                    Tunjukkan file: routes/web.php (routing), DocumentController.php (logic), dan index.blade.php (view)
+                </div>
+            </div>
+
+            <!-- OOP -->
+            <div id="oop" class="section">
+                <h1>OOP & Relationships</h1>
+
+                <h2>Eloquent ORM (Object-Relational Mapping)</h2>
+                <div class="card">
+                    <p>ORM = Database jadi Object PHP. Tidak perlu SQL mentah.</p>
+                    <pre>// Eloquent (OOP)
+$docs = Document::where('status', 'active')->get();
+
+// SQL Mentah
+$docs = DB::select("SELECT * FROM documents WHERE status = 'active'");</pre>
+                </div>
+
+                <h2>Relationships (Line 55-65)</h2>
+                <div class="file-path">📁 app/Models/Document.php</div>
+
+                <h3>1. belongsTo (Many to One)</h3>
+                <pre>public function category() {
+    return $this->belongsTo(Category::class);
+}
+// Pakai: $document->category->name</pre>
+
+                <pre>public function user() {
+    return $this->belongsTo(User::class);
+}
+// Pakai: $document->user->name</pre>
+
+                <h3>2. hasMany (One to Many)</h3>
+                <div class="file-path">📁 app/Models/Category.php (Line 48-51)</div>
+                <pre>public function documents() {
+    return $this->hasMany(Document::class);
+}
+// Pakai: $category->documents->count()</pre>
+
+                <h2>ERD Relationships</h2>
+                <table>
+                    <tr>
+                        <th>Relasi</th>
+                        <th>Tipe</th>
+                        <th>Penjelasan</th>
+                    </tr>
+                    <tr>
+                        <td>Users → Documents</td>
+                        <td><span class="badge blue">1:N</span></td>
+                        <td>1 User bisa create banyak Documents</td>
+                    </tr>
+                    <tr>
+                        <td>Categories → Documents</td>
+                        <td><span class="badge blue">1:N</span></td>
+                        <td>1 Category bisa punya banyak Documents</td>
+                    </tr>
+                    <tr>
+                        <td>Users → Activity Logs</td>
+                        <td><span class="badge blue">1:N</span></td>
+                        <td>1 User bisa punya banyak Activity Logs</td>
+                    </tr>
+                </table>
+
+                <div class="success">
+                    <strong>✓ Keuntungan OOP dengan Eloquent:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Code lebih clean dan readable</li>
+                        <li>Auto-escape SQL injection</li>
+                        <li>Eager loading untuk optimasi query</li>
+                        <li>Relationships mudah dipakai</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ALGORITMA -->
+            <div id="algoritma" class="section">
+                <h1>Algoritma Penting</h1>
+
+                <h2>🔥 Auto-Generate Document Number</h2>
+                <div class="file-path">📁 DocumentController.php (Line 68-116)</div>
+
+                <div class="card">
+                    <h3>Format:</h3>
+                    <code>KODE_KATEGORI/TAHUN/BULAN/URUTAN</code><br>
+                    <strong>Contoh:</strong> <span class="highlight">SM/2026/02/0001</span>
+                </div>
+
+                <h3>Algoritma Step-by-Step:</h3>
+                <ol>
+                    <li>Ambil kategori yang dipilih user → <code>Category::find($categoryId)</code></li>
+                    <li>Generate kode kategori (mapping hardcoded)</li>
+                    <li>Ambil tahun dan bulan saat ini → <code>date('Y')</code>, <code>date('m')</code></li>
+                    <li>Buat prefix → <code>SM/2026/02/</code></li>
+                    <li>Cari dokumen terakhir dengan prefix yang sama</li>
+                    <li>Ambil 4 digit terakhir → <code>substr($lastDoc->document_number, -4)</code></li>
+                    <li>Increment nomor → <code>$lastNumber + 1</code></li>
+                    <li>Padding 4 digit → <code>str_pad($number, 4, '0', STR_PAD_LEFT)</code></li>
+                </ol>
+
+                <h3>Code:</h3>
+                <pre>private function generateDocumentNumber($categoryId)
+{
+    $category = Category::find($categoryId);
+    $categoryCode = $this->generateCategoryCode($category->name);
+
+    $year = date('Y');   // 2026
+    $month = date('m');  // 02
+    $prefix = "{$categoryCode}/{$year}/{$month}/";
+
+    // Cari dokumen terakhir
+    $lastDoc = Document::where('document_number', 'like', $prefix . '%')
+        ->orderBy('document_number', 'desc')
+        ->first();
+
+    if ($lastDoc) {
+        $lastNumber = intval(substr($lastDoc->document_number, -4));
+        $newNumber = str_pad($lastNumber + 1, 4, '0', STR_PAD_LEFT);
+    } else {
+        $newNumber = '0001';
+    }
+
+    return $prefix . $newNumber;
+}</pre>
+
+                <h3>Mapping Kategori ke Kode:</h3>
+                <table>
+                    <tr>
+                        <th>Kategori</th>
+                        <th>Kode</th>
+                        <th>Contoh</th>
+                    </tr>
+                    <tr>
+                        <td>Surat Masuk</td>
+                        <td><code>SM</code></td>
+                        <td>SM/2026/02/0001</td>
+                    </tr>
+                    <tr>
+                        <td>Surat Keluar</td>
+                        <td><code>SK</code></td>
+                        <td>SK/2026/02/0001</td>
+                    </tr>
+                    <tr>
+                        <td>Invoice</td>
+                        <td><code>INV</code></td>
+                        <td>INV/2026/02/0001</td>
+                    </tr>
+                    <tr>
+                        <td>Kontrak</td>
+                        <td><code>KTR</code></td>
+                        <td>KTR/2026/02/0001</td>
+                    </tr>
+                    <tr>
+                        <td>Laporan</td>
+                        <td><code>LPR</code></td>
+                        <td>LPR/2026/02/0001</td>
+                    </tr>
+                    <tr>
+                        <td>Sertifikat</td>
+                        <td><code>SRT</code></td>
+                        <td>SRT/2026/02/0001</td>
+                    </tr>
+                    <tr>
+                        <td>Kategori Baru</td>
+                        <td><code>3 huruf pertama</code></td>
+                        <td>PRO/2026/02/0001</td>
+                    </tr>
+                </table>
+
+                <h2>Data Isolation per User</h2>
+                <div class="file-path">📁 DocumentController.php (Line 25)</div>
+
+                <div class="card">
+                    <p><strong>Konsep:</strong> Setiap user hanya melihat dokumen milik mereka sendiri</p>
+                    <pre>// Filter by current user
+$query = Document::where('user_id', auth()->id());</pre>
+                </div>
+
+                <h3>Authorization Check (Line 190):</h3>
+                <pre>public function show(Document $document)
+{
+    if ($document->user_id !== auth()->id()) {
+        abort(403, 'Anda tidak memiliki akses ke dokumen ini.');
+    }
+}</pre>
+
+                <div class="warning">
+                    <strong>🎯 Highlight saat presentasi:</strong> User A tidak bisa lihat/edit/delete dokumen User B
+                </div>
+            </div>
+
+            <!-- FILE UPLOAD -->
+            <div id="upload" class="section">
+                <h1>File Upload System</h1>
+                <div class="file-path">📁 DocumentController.php (Line 147-160)</div>
+
+                <h2>Step-by-Step Upload:</h2>
+                <ol>
+                    <li><strong>Validation</strong> - Tipe file & ukuran</li>
+                    <li><strong>Generate Filename</strong> - Unique dengan UUID</li>
+                    <li><strong>Store File</strong> - Ke storage/app/public/documents</li>
+                    <li><strong>Save Metadata</strong> - Ke database</li>
+                </ol>
+
+                <h3>1. Validation</h3>
+                <pre>'file' => 'required|file|mimes:pdf,doc,docx,xls,xlsx,jpg,jpeg,png|max:10240'
+// max:10240 = 10MB</pre>
+
+                <h3>2. Store File</h3>
+                <pre>if ($request->hasFile('file')) {
+    $file = $request->file('file');
+
+    // Generate unique filename
+    $filename = Str::uuid() . '.' . $file->getClientOriginalExtension();
+    // Contoh: a3f5c8d2-1234-5678-9abc-def012345678.pdf
+
+    // Store ke storage/app/public/documents/
+    $path = $file->storeAs('documents', $filename, 'public');
+
+    // Save metadata ke database
+    $validated['file_name'] = $file->getClientOriginalName();
+    $validated['file_path'] = $path;
+    $validated['file_type'] = $file->getMimeType();
+    $validated['file_size'] = $file->getSize();
+}</pre>
+
+                <h3>3. Create Storage Link</h3>
+                <pre>php artisan storage:link
+// Creates: public/storage → storage/app/public</pre>
+
+                <h3>4. Access File (Line 100-103)</h3>
+                <div class="file-path">📁 app/Models/Document.php</div>
+                <pre>public function getFileUrlAttribute()
+{
+    return asset('storage/' . $this->file_path);
+    // Output: http://localhost:8000/storage/documents/xxx.pdf
+}</pre>
+
+                <h2>File Preview</h2>
+                <div class="file-path">📁 resources/views/documents/show.blade.php (Line 125-140)</div>
+
+                <table>
+                    <tr>
+                        <th>Tipe File</th>
+                        <th>Preview</th>
+                    </tr>
+                    <tr>
+                        <td>PDF</td>
+                        <td><span class="badge">✓ Ada</span> Pakai iframe</td>
+                    </tr>
+                    <tr>
+                        <td>Images (JPG, PNG, GIF)</td>
+                        <td><span class="badge">✓ Ada</span> Pakai img tag</td>
+                    </tr>
+                    <tr>
+                        <td>Office (DOCX, XLSX, PPTX)</td>
+                        <td><span class="badge red">✗ Tidak ada</span> Download saja</td>
+                    </tr>
+                </table>
+
+                <pre>@if($document->file_type == 'application/pdf')
+    &lt;iframe src="{{ $document->file_url }}"
+            style="width: 100%; height: 600px;"&gt;
+    &lt;/iframe&gt;
+@elseif(in_array($document->file_type, ['image/jpeg', 'image/png']))
+    &lt;img src="{{ $document->file_url }}"&gt;
+@else
+    &lt;p&gt;Silakan unduh file untuk melihat isinya&lt;/p&gt;
+@endif</pre>
+            </div>
+
+            <!-- SECURITY -->
+            <div id="security" class="section">
+                <h1>Security Features</h1>
+
+                <h2>1. Laravel Breeze Authentication</h2>
+                <ul>
+                    <li>Login/Register sistem built-in</li>
+                    <li>Password hashing dengan bcrypt</li>
+                    <li>Session-based authentication</li>
+                </ul>
+                <pre>composer require laravel/breeze --dev
+php artisan breeze:install blade</pre>
+
+                <h2>2. CSRF Protection (Automatic)</h2>
+                <pre>&lt;form method="POST"&gt;
+    @csrf  &lt;!-- Token untuk prevent CSRF attack --&gt;
+&lt;/form&gt;</pre>
+
+                <h2>3. SQL Injection Prevention</h2>
+                <div class="card">
+                    <strong>❌ BAD (SQL Injection vulnerable):</strong>
+                    <pre>DB::raw("SELECT * FROM docs WHERE id = " . $request->id);</pre>
+                    <strong>✅ GOOD (Auto-escaped):</strong>
+                    <pre>Document::find($request->id);  // Eloquent ORM</pre>
+                </div>
+
+                <h2>4. XSS Protection (Blade)</h2>
+                <pre>{{ $document->title }}  &lt;!-- Auto-escaped --&gt;
+{!! $document->html !!}  &lt;!-- Unescaped (hati-hati!) --&gt;</pre>
+
+                <h2>5. File Upload Validation</h2>
+                <pre>'file' => 'mimes:pdf,doc,docx,xls,xlsx,jpg,jpeg,png|max:10240'
+// Hanya tipe file tertentu + max 10MB</pre>
+
+                <h2>6. Authorization Check</h2>
+                <pre>if ($document->user_id !== auth()->id()) {
+    abort(403, 'Unauthorized');
+}</pre>
+
+                <h2>7. Mass Assignment Protection</h2>
+                <div class="file-path">📁 app/Models/Document.php (Line 18-19)</div>
+                <pre>protected $fillable = ['title', 'description', ...];
+// Hanya field ini yang bisa di-mass assign</pre>
+
+                <div class="success">
+                    <strong>✓ Security Checklist:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>CSRF Protection ✓</li>
+                        <li>SQL Injection Prevention ✓</li>
+                        <li>XSS Protection ✓</li>
+                        <li>File Validation ✓</li>
+                        <li>Authorization ✓</li>
+                        <li>Mass Assignment Protection ✓</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- DATABASE -->
+            <div id="database" class="section">
+                <h1>Database & Migrations</h1>
+
+                <h2>Migrations = Version Control Database</h2>
+                <div class="file-path">📁 database/migrations/</div>
+
+                <h3>Keuntungan:</h3>
+                <ul>
+                    <li>Tracking perubahan struktur database</li>
+                    <li>Rollback jika ada masalah</li>
+                    <li>Team collaboration (sync via Git)</li>
+                    <li>Environment consistency</li>
+                </ul>
+
+                <h3>Commands:</h3>
+                <pre>php artisan make:migration create_documents_table
+php artisan migrate
+php artisan migrate:rollback
+php artisan migrate:fresh
+php artisan migrate:fresh --seed</pre>
+
+                <h2>Struktur Database</h2>
+                <table>
+                    <tr>
+                        <th>Table</th>
+                        <th>Kolom Penting</th>
+                        <th>Foreign Keys</th>
+                    </tr>
+                    <tr>
+                        <td><strong>users</strong></td>
+                        <td>id, name, email, password</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>categories</strong></td>
+                        <td>id, name, slug, color, deleted_at</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>documents</strong></td>
+                        <td>id, title, file_path, document_number, status</td>
+                        <td>category_id, user_id</td>
+                    </tr>
+                    <tr>
+                        <td><strong>activity_logs</strong></td>
+                        <td>id, action, model_type, description</td>
+                        <td>user_id</td>
+                    </tr>
+                </table>
+
+                <h2>Soft Delete</h2>
+                <div class="file-path">📁 app/Models/Category.php (Line 14-15)</div>
+
+                <div class="card">
+                    <p><strong>Konsep:</strong> Data tidak dihapus permanent, hanya ditandai "deleted"</p>
+                    <pre>use SoftDeletes;  // Import trait
+
+// Soft delete
+$category->delete();  // Set deleted_at = now()
+
+// Query (auto exclude soft deleted)
+Category::all();
+
+// Include soft deleted
+Category::withTrashed()->get();
+
+// Restore
+$category->restore();  // Set deleted_at = NULL</pre>
+                </div>
+
+                <h2>Activity Logs System</h2>
+                <div class="file-path">📁 app/Models/Document.php (Line 22-48)</div>
+
+                <pre>protected static function booted()
+{
+    static::created(function ($document) {
+        ActivityLog::create([
+            'user_id' => auth()->id(),
+            'action' => 'create',
+            'model_type' => 'Document',
+            'model_id' => $document->id,
+            'description' => 'Membuat dokumen: ' . $document->title,
+        ]);
+    });
+}</pre>
+
+                <div class="success">
+                    <strong>✓ Keuntungan Activity Logs:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Tracking siapa melakukan apa dan kapan</li>
+                        <li>Debugging mudah</li>
+                        <li>Security audit</li>
+                        <li>Compliance requirement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- KUK MAPPING -->
+            <div id="kuk" class="section">
+                <h1>KUK BNSP Mapping</h1>
+
+                <table>
+                    <tr>
+                        <th>KUK</th>
+                        <th>Kategori</th>
+                        <th>File</th>
+                        <th>Line</th>
+                    </tr>
+                    <tr>
+                        <td><strong>001</strong></td>
+                        <td>Analisis Tools</td>
+                        <td>composer.json</td>
+                        <td>8-30</td>
+                    </tr>
+                    <tr>
+                        <td><strong>003</strong></td>
+                        <td>Framework</td>
+                        <td>config/app.php</td>
+                        <td>All</td>
+                    </tr>
+                    <tr>
+                        <td><strong>006</strong></td>
+                        <td>UX Design</td>
+                        <td>layouts/main.blade.php</td>
+                        <td>1-462</td>
+                    </tr>
+                    <tr>
+                        <td><strong>017</strong></td>
+                        <td>Terstruktur</td>
+                        <td>app/Http/Controllers/</td>
+                        <td>All</td>
+                    </tr>
+                    <tr>
+                        <td><strong>018</strong></td>
+                        <td>OOP</td>
+                        <td>app/Models/Document.php</td>
+                        <td>55-65</td>
+                    </tr>
+                    <tr>
+                        <td><strong>019</strong></td>
+                        <td>Library PHP</td>
+                        <td>composer.json</td>
+                        <td>8-30</td>
+                    </tr>
+                    <tr>
+                        <td><strong>020</strong></td>
+                        <td>SQL</td>
+                        <td>app/Models/Document.php</td>
+                        <td>70-95</td>
+                    </tr>
+                    <tr>
+                        <td><strong>021</strong></td>
+                        <td>Akses DB</td>
+                        <td>app/Models/*.php</td>
+                        <td>All</td>
+                    </tr>
+                    <tr>
+                        <td><strong>022</strong></td>
+                        <td>Algoritma</td>
+                        <td>DocumentController.php</td>
+                        <td>68-116</td>
+                    </tr>
+                    <tr>
+                        <td><strong>024</strong></td>
+                        <td>Migrasi DB</td>
+                        <td>database/migrations/</td>
+                        <td>All</td>
+                    </tr>
+                    <tr>
+                        <td><strong>025</strong></td>
+                        <td>Debugging</td>
+                        <td>DocumentController.php</td>
+                        <td>179-185</td>
+                    </tr>
+                    <tr>
+                        <td><strong>030</strong></td>
+                        <td>Multimedia</td>
+                        <td>DocumentController.php</td>
+                        <td>147-160</td>
+                    </tr>
+                    <tr>
+                        <td><strong>032</strong></td>
+                        <td>Code Review</td>
+                        <td>All Controllers</td>
+                        <td>All</td>
+                    </tr>
+                    <tr>
+                        <td><strong>036</strong></td>
+                        <td>Pengujian</td>
+                        <td>tests/, phpunit.xml</td>
+                        <td>All</td>
+                    </tr>
+                    <tr>
+                        <td><strong>044</strong></td>
+                        <td>Alert/Notif</td>
+                        <td>layouts/main.blade.php</td>
+                        <td>402-461</td>
+                    </tr>
+                    <tr>
+                        <td><strong>047</strong></td>
+                        <td>Pembaruan PL</td>
+                        <td>app/Models/Category.php</td>
+                        <td>14-15</td>
+                    </tr>
+                </table>
+
+                <div class="warning">
+                    <strong>⚠️ Untuk Presentasi:</strong><br>
+                    Pilih 5-7 KUK penting untuk dijelaskan detail. Sisanya cukup sebutkan singkat.
+                </div>
+
+                <div class="card">
+                    <h3>KUK Prioritas untuk Dijelaskan:</h3>
+                    <span class="badge purple">003 - Framework</span>
+                    <span class="badge purple">017 - Terstruktur (MVC)</span>
+                    <span class="badge purple">018 - OOP</span>
+                    <span class="badge purple">022 - Algoritma</span>
+                    <span class="badge purple">024 - Migrasi</span>
+                    <span class="badge purple">030 - Multimedia</span>
+                    <span class="badge purple">044 - Alert</span>
+                </div>
+            </div>
+
+            <!-- DEMO FLOW -->
+            <div id="demo" class="section">
+                <h1>Demo Flow Presentasi</h1>
+
+                <h2>Persiapan (5 menit)</h2>
+                <ul class="checklist">
+                    <li>Start server: <code>php artisan serve</code></li>
+                    <li>Buka browser: <code>http://127.0.0.1:8000</code></li>
+                    <li>Buka VS Code dengan file penting</li>
+                    <li>Siapkan 2-3 sample files (PDF, DOCX, JPG)</li>
+                    <li>Buka file panduan ini di tab terpisah</li>
+                </ul>
+
+                <h2>Demo Live (10 menit)</h2>
+
+                <div class="card">
+                    <h3>1. Register & Login (1 menit)</h3>
+                    <ul>
+                        <li>Klik Register</li>
+                        <li>Isi: Nama, Email, Password</li>
+                        <li>Login dengan kredensial</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>2. Dashboard (1 menit)</h3>
+                    <ul>
+                        <li>Tunjukkan statistik (0 dokumen, 0 kategori)</li>
+                        <li>Jelaskan layout: Sidebar, Content</li>
+                        <li>Show file: <code>resources/views/dashboard.blade.php</code></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>3. CRUD Kategori (2 menit)</h3>
+                    <ul>
+                        <li>Klik "Kategori" di sidebar</li>
+                        <li>Tambah: "Surat Masuk" dengan warna biru</li>
+                        <li>Show code: <code>CategoryController.php</code></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>4. CRUD Dokumen (4 menit) - FOKUS DI SINI</h3>
+                    <ul>
+                        <li>Klik "Dokumen" → "Tambah Dokumen"</li>
+                        <li>Isi form, upload PDF</li>
+                        <li><strong>HIGHLIGHT:</strong> Nomor otomatis <code>SM/2026/02/0001</code></li>
+                        <li>Show code: <code>generateDocumentNumber()</code> Line 68-92</li>
+                        <li>View detail → Preview PDF</li>
+                        <li>Show code: <code>show.blade.php</code> Line 125-140</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>5. Activity Logs (1 menit)</h3>
+                    <ul>
+                        <li>Klik "Log Aktivitas"</li>
+                        <li>Tunjukkan log create kategori & dokumen</li>
+                        <li>Show code: <code>Document.php</code> Line 22-48</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>6. Multi User Test (1 menit)</h3>
+                    <ul>
+                        <li>Logout</li>
+                        <li>Register user baru</li>
+                        <li>Dashboard kosong! (Data isolation)</li>
+                        <li>Show code: <code>DocumentController@index()</code> Line 25</li>
+                    </ul>
+                </div>
+
+                <h2>Explain Code (10 menit)</h2>
+                <ol>
+                    <li><strong>MVC Pattern (2 menit)</strong>
+                        <ul>
+                            <li>Buka: routes/web.php, DocumentController.php, index.blade.php</li>
+                            <li>Jelaskan flow lengkap</li>
+                        </ul>
+                    </li>
+                    <li><strong>Relationships (2 menit)</strong>
+                        <ul>
+                            <li>Buka: Document.php Line 55-65</li>
+                            <li>Jelaskan belongsTo User & Category</li>
+                        </ul>
+                    </li>
+                    <li><strong>Auto Document Number (3 menit)</strong>
+                        <ul>
+                            <li>Buka: DocumentController.php Line 68-116</li>
+                            <li>Jelaskan algoritma step-by-step</li>
+                            <li>Tunjukkan mapping kategori</li>
+                        </ul>
+                    </li>
+                    <li><strong>File Upload (2 menit)</strong>
+                        <ul>
+                            <li>Buka: DocumentController@store() Line 147-160</li>
+                            <li>Jelaskan validation, store, metadata</li>
+                        </ul>
+                    </li>
+                    <li><strong>Data Isolation (1 menit)</strong>
+                        <ul>
+                            <li>Buka: DocumentController@index() Line 25</li>
+                            <li>Jelaskan where('user_id', auth()->id())</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="warning">
+                    <strong>⏰ Time Management:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Demo: 10 menit</li>
+                        <li>Code explain: 10 menit</li>
+                        <li>KUK mapping: 5 menit</li>
+                        <li>Q&A: 10 menit</li>
+                        <li>Buffer: 5 menit</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Q&A -->
+            <div id="qa" class="section">
+                <h1>Q&A Penting</h1>
+
+                <div class="card">
+                    <h3>Q: Kenapa pilih Laravel?</h3>
+                    <p><strong>A:</strong></p>
+                    <ul>
+                        <li>MVC Pattern (terstruktur)</li>
+                        <li>Eloquent ORM (query mudah)</li>
+                        <li>Security built-in (CSRF, SQL injection prevention)</li>
+                        <li>Ecosystem besar (banyak package)</li>
+                        <li>Development cepat (artisan commands)</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Q: Jelaskan MVC Pattern</h3>
+                    <p><strong>A:</strong></p>
+                    <ul>
+                        <li><strong>Model:</strong> Data & business logic (Document.php)</li>
+                        <li><strong>View:</strong> Tampilan/UI (index.blade.php)</li>
+                        <li><strong>Controller:</strong> Bridge antara Model & View (DocumentController.php)</li>
+                    </ul>
+                    <p><strong>Flow:</strong> Route → Controller → Model → View → Response</p>
+                </div>
+
+                <div class="card">
+                    <h3>Q: Bagaimana cara kerja Auto Document Number?</h3>
+                    <p><strong>A:</strong></p>
+                    <ol>
+                        <li>Ambil kategori yang dipilih</li>
+                        <li>Generate kode (mapping hardcoded: Surat Masuk→SM)</li>
+                        <li>Format: KODE/TAHUN/BULAN/URUTAN</li>
+                        <li>Cari dokumen terakhir dengan prefix sama</li>
+                        <li>Increment nomor dengan padding 4 digit</li>
+                    </ol>
+                    <p><strong>Contoh:</strong> <code>SM/2026/02/0001</code></p>
+                    <p><strong>File:</strong> <code>DocumentController.php</code> Line 68-92</p>
+                </div>
+
+                <div class="card">
+                    <h3>Q: Bagaimana handle file upload?</h3>
+                    <p><strong>A:</strong></p>
+                    <ol>
+                        <li>Validation (type: PDF/DOC/XLS/images, max: 10MB)</li>
+                        <li>Generate unique filename dengan UUID</li>
+                        <li>Store ke storage/app/public/documents</li>
+                        <li>Save metadata ke database (filename, size, type, path)</li>
+                        <li>Create storage link untuk akses public</li>
+                    </ol>
+                    <p><strong>File:</strong> <code>DocumentController.php</code> Line 147-160</p>
+                </div>
+
+                <div class="card">
+                    <h3>Q: Jelaskan data isolation per user</h3>
+                    <p><strong>A:</strong></p>
+                    <ul>
+                        <li>Setiap user hanya melihat dokumen milik mereka sendiri</li>
+                        <li>Filter: <code>where('user_id', auth()->id())</code></li>
+                        <li>Authorization check di show/edit/update/delete</li>
+                        <li>User A tidak bisa akses dokumen User B</li>
+                    </ul>
+                    <p><strong>File:</strong> <code>DocumentController.php</code> Line 25, 190</p>
+                </div>
+
+                <div class="card">
+                    <h3>Q: Apa itu Soft Delete?</h3>
+                    <p><strong>A:</strong></p>
+                    <ul>
+                        <li>Data tidak dihapus permanent dari database</li>
+                        <li>Hanya tambah timestamp di kolom <code>deleted_at</code></li>
+                        <li>Bisa di-restore kapan saja</li>
+                        <li>Keuntungan: Recovery data, audit trail</li>
+                    </ul>
+                    <p><strong>File:</strong> <code>Category.php</code> Line 14-15</p>
+                </div>
+
+                <div class="card">
+                    <h3>Q: Security apa saja yang diimplementasi?</h3>
+                    <p><strong>A:</strong></p>
+                    <ul>
+                        <li>Laravel Breeze authentication</li>
+                        <li>CSRF protection (automatic)</li>
+                        <li>SQL injection prevention (Eloquent ORM)</li>
+                        <li>XSS protection (Blade auto-escape)</li>
+                        <li>File validation (type & size)</li>
+                        <li>Authorization check (user access control)</li>
+                        <li>Mass assignment protection</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Q: Apa itu Database Migrations?</h3>
+                    <p><strong>A:</strong></p>
+                    <ul>
+                        <li>Version control untuk database schema</li>
+                        <li>Tracking perubahan struktur database</li>
+                        <li>Bisa rollback jika ada masalah</li>
+                        <li>Team collaboration via Git</li>
+                        <li>Consistency antar environment</li>
+                    </ul>
+                    <p><strong>Command:</strong> <code>php artisan migrate</code></p>
+                </div>
+
+                <div class="success">
+                    <strong>💡 Tips Jawab Pertanyaan:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Stay calm, jangan nervous</li>
+                        <li>Jawab dengan confident</li>
+                        <li>Tunjukkan code kalau perlu</li>
+                        <li>Kalau tidak tahu, jujur saja</li>
+                        <li>Fokus ke fitur yang kamu pahami</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+
+            // Update nav items
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Scroll to top
+            document.querySelector('.content').scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
