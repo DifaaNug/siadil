@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIADIL - Panduan Presentasi</title>
+    <title>SIADIL - Panduan Presentasi 17 KUK BNSP</title>
     <style>
         * {
             margin: 0;
@@ -282,7 +282,7 @@
     <div class="container">
         <div class="sidebar">
             <div class="logo">SIADIL</div>
-            <div class="subtitle">Panduan Presentasi</div>
+            <div class="subtitle">Panduan Presentasi<br>17 KUK BNSP</div>
 
             <div class="nav-item active" onclick="showSection('mvc')">MVC Pattern</div>
             <div class="nav-item" onclick="showSection('oop')">OOP & Relationships</div>
@@ -783,127 +783,217 @@ $category->restore();  // Set deleted_at = NULL</pre>
 
             <!-- KUK MAPPING -->
             <div id="kuk" class="section">
-                <h1>KUK BNSP Mapping</h1>
+                <h1>KUK BNSP Mapping (17 KUK)</h1>
 
+                <div class="success">
+                    <strong>✅ Total: 17 KUK terimplementasi</strong><br>
+                    Terbagi dalam 3 kelompok: Perancangan (4), Pengimplementasian (10), Instalasi & Operasi (3)
+                </div>
+
+                <h2>I - Perancangan Aplikasi Perangkat Lunak</h2>
                 <table>
                     <tr>
-                        <th>KUK</th>
-                        <th>Kategori</th>
-                        <th>File</th>
-                        <th>Line</th>
+                        <th style="width: 150px">Kode Unit</th>
+                        <th>Judul Unit</th>
+                        <th>File/Folder</th>
+                        <th style="width: 80px">Line</th>
                     </tr>
                     <tr>
-                        <td><strong>001</strong></td>
-                        <td>Analisis Tools</td>
-                        <td>composer.json</td>
+                        <td><strong>J.620100.001.01</strong></td>
+                        <td>Menganalisis Tools</td>
+                        <td>composer.json, package.json</td>
                         <td>8-30</td>
                     </tr>
                     <tr>
-                        <td><strong>003</strong></td>
-                        <td>Framework</td>
-                        <td>config/app.php</td>
+                        <td><strong>J.620100.002.01</strong></td>
+                        <td>Menganalisis Skalabilitas Perangkat Lunak</td>
+                        <td>app/Models/*.php (Eloquent ORM)</td>
                         <td>All</td>
                     </tr>
                     <tr>
-                        <td><strong>006</strong></td>
-                        <td>UX Design</td>
-                        <td>layouts/main.blade.php</td>
-                        <td>1-462</td>
+                        <td><strong>J.620100.003.01</strong></td>
+                        <td>Melakukan Identifikasi Library, Komponen atau Framework yang Diperlukan</td>
+                        <td>composer.json, config/app.php</td>
+                        <td>All</td>
                     </tr>
                     <tr>
-                        <td><strong>017</strong></td>
-                        <td>Terstruktur</td>
+                        <td><strong>J.620100.006.01</strong></td>
+                        <td>Merancang User Experience</td>
+                        <td>resources/views/layouts/main.blade.php</td>
+                        <td>1-462</td>
+                    </tr>
+                </table>
+
+                <div class="card">
+                    <h3>📋 Penjelasan Perancangan:</h3>
+                    <ul>
+                        <li><strong>001 - Tools:</strong> Laravel 11, PHP 8.2, MySQL 8.0, Composer, Vite</li>
+                        <li><strong>002 - Skalabilitas:</strong> Eloquent ORM, Indexing database, Query optimization</li>
+                        <li><strong>003 - Framework:</strong> Laravel Framework dengan Breeze, Carbon, Faker</li>
+                        <li><strong>006 - UX:</strong> Clean UI, gradient colors, responsive, card-based layout</li>
+                    </ul>
+                </div>
+
+                <h2>II - Pengimplementasian Perangkat Lunak</h2>
+                <table>
+                    <tr>
+                        <th style="width: 150px">Kode Unit</th>
+                        <th>Judul Unit</th>
+                        <th>File/Folder</th>
+                        <th style="width: 80px">Line</th>
+                    </tr>
+                    <tr>
+                        <td><strong>J.620100.017.02</strong></td>
+                        <td>Mengimplementasikan Pemrograman Terstruktur</td>
                         <td>app/Http/Controllers/</td>
                         <td>All</td>
                     </tr>
                     <tr>
-                        <td><strong>018</strong></td>
-                        <td>OOP</td>
+                        <td><strong>J.620100.018.02</strong></td>
+                        <td>Mengimplementasikan Pemrograman Berorientasi Objek</td>
                         <td>app/Models/Document.php</td>
                         <td>55-65</td>
                     </tr>
                     <tr>
-                        <td><strong>019</strong></td>
-                        <td>Library PHP</td>
-                        <td>composer.json</td>
-                        <td>8-30</td>
-                    </tr>
-                    <tr>
-                        <td><strong>020</strong></td>
-                        <td>SQL</td>
+                        <td><strong>J.620100.020.02</strong></td>
+                        <td>Menggunakan SQL</td>
                         <td>app/Models/Document.php</td>
                         <td>70-95</td>
                     </tr>
                     <tr>
-                        <td><strong>021</strong></td>
-                        <td>Akses DB</td>
+                        <td><strong>J.620100.021.02</strong></td>
+                        <td>Menerapkan Akses Basis Data</td>
                         <td>app/Models/*.php</td>
                         <td>All</td>
                     </tr>
                     <tr>
-                        <td><strong>022</strong></td>
-                        <td>Algoritma</td>
-                        <td>DocumentController.php</td>
+                        <td><strong>J.620100.022.02</strong></td>
+                        <td>Mengimplementasikan Algoritma Pemrograman</td>
+                        <td>app/Http/Controllers/DocumentController.php</td>
                         <td>68-116</td>
                     </tr>
                     <tr>
-                        <td><strong>024</strong></td>
-                        <td>Migrasi DB</td>
+                        <td><strong>J.620100.024.02</strong></td>
+                        <td>Melakukan Migrasi Ke Teknologi Baru</td>
                         <td>database/migrations/</td>
                         <td>All</td>
                     </tr>
                     <tr>
-                        <td><strong>025</strong></td>
-                        <td>Debugging</td>
-                        <td>DocumentController.php</td>
+                        <td><strong>J.620100.025.02</strong></td>
+                        <td>Melakukan Debugging</td>
+                        <td>app/Http/Controllers/DocumentController.php</td>
                         <td>179-185</td>
                     </tr>
                     <tr>
-                        <td><strong>030</strong></td>
-                        <td>Multimedia</td>
-                        <td>DocumentController.php</td>
+                        <td><strong>J.620100.030.02</strong></td>
+                        <td>Menerapkan Pemrograman Multimedia</td>
+                        <td>app/Http/Controllers/DocumentController.php</td>
                         <td>147-160</td>
                     </tr>
                     <tr>
-                        <td><strong>032</strong></td>
-                        <td>Code Review</td>
-                        <td>All Controllers</td>
+                        <td><strong>J.620100.032.01</strong></td>
+                        <td>Menerapkan Code Review</td>
+                        <td>app/Http/Controllers/*.php (All)</td>
                         <td>All</td>
                     </tr>
                     <tr>
-                        <td><strong>036</strong></td>
-                        <td>Pengujian</td>
+                        <td><strong>J.620100.036.02</strong></td>
+                        <td>Melaksanakan Pengujian Kode Program Secara Statis</td>
                         <td>tests/, phpunit.xml</td>
                         <td>All</td>
                     </tr>
+                </table>
+
+                <div class="card">
+                    <h3>📋 Penjelasan Pengimplementasian:</h3>
+                    <ul>
+                        <li><strong>017 - Terstruktur:</strong> MVC Pattern (Model-View-Controller)</li>
+                        <li><strong>018 - OOP:</strong> Eloquent Models, Relationships, Inheritance</li>
+                        <li><strong>020 - SQL:</strong> Query Builder, Scopes, Optimized Queries</li>
+                        <li><strong>021 - Akses DB:</strong> Eloquent ORM CRUD operations</li>
+                        <li><strong>022 - Algoritma:</strong> Auto-generate document number (KODE/YYYY/MM/XXXX)</li>
+                        <li><strong>024 - Migrasi:</strong> Database version control dengan migrations</li>
+                        <li><strong>025 - Debugging:</strong> Try-catch error handling, logging</li>
+                        <li><strong>030 - Multimedia:</strong> File upload (PDF, Office, Images), preview system</li>
+                        <li><strong>032 - Code Review:</strong> Comments, PHPDoc, consistent naming</li>
+                        <li><strong>036 - Pengujian:</strong> PHPUnit framework, 40 test cases (100% pass)</li>
+                    </ul>
+                </div>
+
+                <h2>III - Instalasi dan Operasi Perangkat Lunak</h2>
+                <table>
                     <tr>
-                        <td><strong>044</strong></td>
-                        <td>Alert/Notif</td>
-                        <td>layouts/main.blade.php</td>
+                        <th style="width: 150px">Kode Unit</th>
+                        <th>Judul Unit</th>
+                        <th>File/Folder</th>
+                        <th style="width: 80px">Line</th>
+                    </tr>
+                    <tr>
+                        <td><strong>J.620100.044.01</strong></td>
+                        <td>Menerapkan Alert Notification Jika Aplikasi Bermasalah</td>
+                        <td>resources/views/layouts/main.blade.php</td>
                         <td>402-461</td>
                     </tr>
                     <tr>
-                        <td><strong>047</strong></td>
-                        <td>Pembaruan PL</td>
-                        <td>app/Models/Category.php</td>
+                        <td><strong>J.620100.045.01</strong></td>
+                        <td>Melakukan Pemantauan Resource yang Digunakan Aplikasi</td>
+                        <td>app/Http/Controllers/DashboardController.php</td>
+                        <td>23-50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>J.620100.047.01</strong></td>
+                        <td>Melakukan Pembaharuan Perangkat Lunak</td>
+                        <td>app/Models/Category.php (Soft Delete)</td>
                         <td>14-15</td>
                     </tr>
                 </table>
 
+                <div class="card">
+                    <h3>📋 Penjelasan Instalasi & Operasi:</h3>
+                    <ul>
+                        <li><strong>044 - Alert:</strong> Flash messages (success, error, info) dengan auto-hide 5s</li>
+                        <li><strong>045 - Pemantauan:</strong> Dashboard monitoring (total docs, file size, recent activities)</li>
+                        <li><strong>047 - Pembaharuan:</strong> Soft delete dengan restore capability (data tidak hilang)</li>
+                    </ul>
+                </div>
+
                 <div class="warning">
-                    <strong>⚠️ Untuk Presentasi:</strong><br>
-                    Pilih 5-7 KUK penting untuk dijelaskan detail. Sisanya cukup sebutkan singkat.
+                    <strong>⚠️ Strategi Presentasi:</strong><br>
+                    Waktu terbatas, fokus pada 7-8 KUK penting yang mudah di-demo. Sisanya sebutkan singkat dengan menunjuk ke tabel mapping.
                 </div>
 
                 <div class="card">
-                    <h3>KUK Prioritas untuk Dijelaskan:</h3>
-                    <span class="badge purple">003 - Framework</span>
-                    <span class="badge purple">017 - Terstruktur (MVC)</span>
-                    <span class="badge purple">018 - OOP</span>
-                    <span class="badge purple">022 - Algoritma</span>
-                    <span class="badge purple">024 - Migrasi</span>
-                    <span class="badge purple">030 - Multimedia</span>
-                    <span class="badge purple">044 - Alert</span>
+                    <h3>🎯 KUK Prioritas untuk Demo Live (7 KUK):</h3>
+                    <span class="badge purple">003 - Framework Laravel</span>
+                    <span class="badge purple">006 - UX Design</span>
+                    <span class="badge purple">017 - MVC Pattern</span>
+                    <span class="badge purple">018 - OOP & Relationships</span>
+                    <span class="badge purple">022 - Algoritma Auto-numbering</span>
+                    <span class="badge purple">030 - File Upload & Preview</span>
+                    <span class="badge purple">044 - Flash Messages</span>
+
+                    <h3 style="margin-top: 20px">📝 KUK Cukup Disebutkan (10 KUK):</h3>
+                    <p>Tunjukkan tabel mapping, sebutkan file path dan line number, tidak perlu buka code detail.</p>
+                    <span class="badge blue">001 - Tools</span>
+                    <span class="badge blue">002 - Skalabilitas</span>
+                    <span class="badge blue">020 - SQL</span>
+                    <span class="badge blue">021 - Akses DB</span>
+                    <span class="badge blue">024 - Migrasi</span>
+                    <span class="badge blue">025 - Debugging</span>
+                    <span class="badge blue">032 - Code Review</span>
+                    <span class="badge blue">036 - Testing</span>
+                    <span class="badge blue">045 - Monitoring</span>
+                    <span class="badge blue">047 - Soft Delete</span>
+                </div>
+
+                <div class="success">
+                    <h3>✅ Quick Reference untuk Penguji:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><strong>Perancangan (4):</strong> Tools, Skalabilitas, Framework, UX ✅</li>
+                        <li><strong>Implementasi (10):</strong> MVC, OOP, SQL, DB Access, Algoritma, Migrasi, Debug, Multimedia, Review, Testing ✅</li>
+                        <li><strong>Operasi (3):</strong> Alert, Monitoring, Update/Soft Delete ✅</li>
+                        <li style="margin-top: 10px; font-size: 16px; color: #059669;"><strong>TOTAL: 17/17 KUK TERPENUHI 🎉</strong></li>
+                    </ul>
                 </div>
             </div>
 
@@ -1018,12 +1108,33 @@ $category->restore();  // Set deleted_at = NULL</pre>
                 <div class="warning">
                     <strong>⏰ Time Management:</strong>
                     <ul style="margin-top: 10px;">
-                        <li>Demo: 10 menit</li>
-                        <li>Code explain: 10 menit</li>
-                        <li>KUK mapping: 5 menit</li>
-                        <li>Q&A: 10 menit</li>
+                        <li>Demo Live: 10 menit (6 langkah)</li>
+                        <li>Code Explain: 10 menit (5 topic)</li>
+                        <li>KUK Mapping: 7 menit (17 KUK - fokus 7 KUK prioritas)</li>
+                        <li>Q&A: 8 menit</li>
                         <li>Buffer: 5 menit</li>
+                        <li><strong>Total: 40 menit</strong></li>
                     </ul>
+                </div>
+
+                <h2>KUK Mapping Strategy (7 menit)</h2>
+                <div class="card">
+                    <h3>Strategi Efisien:</h3>
+                    <ol>
+                        <li><strong>1 menit:</strong> Overview - "Ada 17 KUK dalam 3 kelompok: Perancangan (4), Implementasi (10), Operasi (3)"</li>
+                        <li><strong>4 menit:</strong> Demo 7 KUK prioritas dengan buka code:
+                            <ul>
+                                <li>Framework Laravel (30 detik)</li>
+                                <li>UX Design (30 detik)</li>
+                                <li>MVC Pattern (30 detik)</li>
+                                <li>OOP & Relationships (30 detik)</li>
+                                <li>Algoritma Auto-number (1 menit)</li>
+                                <li>File Upload & Preview (1 menit)</li>
+                                <li>Flash Messages (30 detik)</li>
+                            </ul>
+                        </li>
+                        <li><strong>2 menit:</strong> Sebutkan 10 KUK lainnya sambil tunjuk tabel (tanpa buka code detail)</li>
+                    </ol>
                 </div>
             </div>
 
@@ -1130,6 +1241,34 @@ $category->restore();  // Set deleted_at = NULL</pre>
                         <li>Consistency antar environment</li>
                     </ul>
                     <p><strong>Command:</strong> <code>php artisan migrate</code></p>
+                </div>
+
+                <div class="card">
+                    <h3>Q: Bagaimana skalabilitas aplikasi ini?</h3>
+                    <p><strong>A:</strong></p>
+                    <ul>
+                        <li><strong>Eloquent ORM:</strong> Query mudah di-optimize tanpa ubah code</li>
+                        <li><strong>Database Indexing:</strong> Index pada user_id, category_id, document_date untuk query cepat</li>
+                        <li><strong>Pagination:</strong> Load data per page (15 items), tidak semua sekaligus</li>
+                        <li><strong>Caching Ready:</strong> Laravel support Redis/Memcached untuk caching</li>
+                        <li><strong>Horizontal Scaling:</strong> Bisa add more servers (load balancer)</li>
+                        <li><strong>File Storage:</strong> Bisa pindah ke S3/Cloud Storage</li>
+                    </ul>
+                    <p><strong>File:</strong> <code>database/migrations/*.php</code> (lihat index definitions)</p>
+                </div>
+
+                <div class="card">
+                    <h3>Q: Bagaimana monitoring resource aplikasi?</h3>
+                    <p><strong>A:</strong></p>
+                    <ul>
+                        <li><strong>Dashboard Statistics:</strong> Total documents, file size, active documents</li>
+                        <li><strong>Activity Logs:</strong> Tracking semua aktivitas user (create, update, delete)</li>
+                        <li><strong>Recent Documents:</strong> Monitor dokumen terbaru yang di-upload</li>
+                        <li><strong>File Size Tracking:</strong> Sum total file size per user</li>
+                        <li><strong>Category Distribution:</strong> Document count per kategori</li>
+                        <li><strong>Expiring Documents Alert:</strong> Check dokumen yang akan expired</li>
+                    </ul>
+                    <p><strong>File:</strong> <code>DashboardController.php</code> Line 23-70</p>
                 </div>
 
                 <div class="success">
