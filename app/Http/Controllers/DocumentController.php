@@ -173,7 +173,7 @@ class DocumentController extends Controller
                 ->with('success', 'Dokumen berhasil ditambahkan!');
 
         } catch (\Exception $e) {
-            // KUK 025: Error handling dan logging
+            // KUK 025: Debugging - Error logging
             \Log::error('Error creating document: ' . $e->getMessage());
 
             return redirect()
@@ -181,6 +181,8 @@ class DocumentController extends Controller
                 ->withInput()
                 ->with('error', 'Gagal menambahkan dokumen: ' . $e->getMessage());
         }
+
+
     }
 
     /**
