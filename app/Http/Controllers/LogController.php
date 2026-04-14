@@ -80,36 +80,36 @@ class LogController extends Controller
      * Export logs to file
      * KUK 030: File generation
      */
-    public function export(Request $request)
-    {
-        $logs = ActivityLog::latest()->get();
+    // public function export(Request $request)
+    // {
+    //     $logs = ActivityLog::latest()->get();
 
-        $filename = 'activity-logs-' . now()->format('Y-m-d-His') . '.csv';
+    //     $filename = 'activity-logs-' . now()->format('Y-m-d-His') . '.csv';
 
-        $headers = [
-            'Content-Type' => 'text/csv',
-            'Content-Disposition' => "attachment; filename=\"$filename\"",
-        ];
+    //     $headers = [
+    //         'Content-Type' => 'text/csv',
+    //         'Content-Disposition' => "attachment; filename=\"$filename\"",
+    //     ];
 
-        $callback = function() use ($logs) {
-            $file = fopen('php://output', 'w');
+    //     $callback = function() use ($logs) {
+    //         $file = fopen('php://output', 'w');
 
-            // Header
-            fputcsv($file, ['Time', 'Action', 'Description', 'IP Address']);
+    //         // Header
+    //         fputcsv($file, ['Time', 'Action', 'Description', 'IP Address']);
 
-            // Data
-            foreach ($logs as $log) {
-                fputcsv($file, [
-                    $log->created_at->format('Y-m-d H:i:s'),
-                    $log->action,
-                    $log->description,
-                    $log->ip_address,
-                ]);
-            }
+    //         // Data
+    //         foreach ($logs as $log) {
+    //             fputcsv($file, [
+    //                 $log->created_at->format('Y-m-d H:i:s'),
+    //                 $log->action,
+    //                 $log->description,
+    //                 $log->ip_address,
+    //             ]);
+    //         }
 
-            fclose($file);
-        };
+    //         fclose($file);
+    //     };
 
-        return response()->stream($callback, 200, $headers);
-    }
+    //     return response()->stream($callback, 200, $headers);
+    // }
 }
