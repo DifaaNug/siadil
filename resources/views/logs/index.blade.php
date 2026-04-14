@@ -41,7 +41,7 @@
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
         <h3 style="font-size: 18px; font-weight: bold;">Log Aktivitas ({{ $logs->total() }})</h3>
         <div style="display: flex; gap: 10px;">
-            <a href="{{ route('logs.export') }}" class="btn btn-success">Ekspor CSV</a>
+            <!-- <a href="{{ route('logs.export') }}" class="btn btn-success">Ekspor CSV</a> -->
             <form action="{{ route('logs.clear') }}" method="POST" style="display: inline;" onsubmit="return confirmDelete('Yakin ingin menghapus log lama (>30 hari)?')">
                 @csrf
                 <button type="submit" class="btn btn-danger">Hapus Log Lama</button>
